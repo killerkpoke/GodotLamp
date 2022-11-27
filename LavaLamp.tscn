@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://lava_lamp_base.png.png" type="Texture" id=1]
+[ext_resource path="res://LavaLamp.gd" type="Script" id=2]
+[ext_resource path="res://LavaLamp.shader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+shader_param/threshold = 0.3
+shader_param/color_edge = 1.9
+shader_param/glow_power = 7.0
+shader_param/max_strength = 16.0
+shader_param/top = 0.2
+shader_param/bottom = 0.6
+shader_param/background_edge = Color( 0.886275, 0.913725, 0.0705882, 1 )
+shader_param/background_center = Color( 0.137255, 0.521569, 0.890196, 1 )
+shader_param/blob_top = Color( 0.94902, 0.188235, 0.917647, 1 )
+shader_param/blob_bottom = Color( 0.839216, 0.0509804, 0.0509804, 1 )
+
+[node name="Sprite" type="Sprite"]
+material = SubResource( 2 )
+scale = Vector2( 0.37, 0.37 )
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
